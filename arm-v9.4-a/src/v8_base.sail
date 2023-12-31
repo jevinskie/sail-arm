@@ -348,7 +348,7 @@ enum ArchVersion = {
   v9Ap4
 }
 
-register FEAT_AA32EL0_IMPLEMENTED : bool = true
+register FEAT_AA32EL0_IMPLEMENTED : bool = false
 
 register FEAT_AA32EL1_IMPLEMENTED : bool = false
 
@@ -358,19 +358,19 @@ register FEAT_AA32EL3_IMPLEMENTED : bool = false
 
 register FEAT_AA64EL0_IMPLEMENTED : bool = true
 
-register FEAT_AA64EL1_IMPLEMENTED : bool = true
+register FEAT_AA64EL1_IMPLEMENTED : bool = false
 
-register FEAT_AA64EL2_IMPLEMENTED : bool = true
+register FEAT_AA64EL2_IMPLEMENTED : bool = false
 
-register FEAT_AA64EL3_IMPLEMENTED : bool = true
+register FEAT_AA64EL3_IMPLEMENTED : bool = false
 
 register FEAT_EL0_IMPLEMENTED : bool = true
 
-register FEAT_EL1_IMPLEMENTED : bool = true
+register FEAT_EL1_IMPLEMENTED : bool = false
 
-register FEAT_EL2_IMPLEMENTED : bool = true
+register FEAT_EL2_IMPLEMENTED : bool = false
 
-register FEAT_EL3_IMPLEMENTED : bool = true
+register FEAT_EL3_IMPLEMENTED : bool = false
 
 register FEAT_AES_IMPLEMENTED : bool = true
 
@@ -388,45 +388,45 @@ register FEAT_DoubleLock_IMPLEMENTED : bool = true
 
 register FEAT_ETMv4_IMPLEMENTED : bool = false
 
-register FEAT_ETMv4p1_IMPLEMENTED : bool = true
+register FEAT_ETMv4p1_IMPLEMENTED : bool = false
 
-register FEAT_ETMv4p2_IMPLEMENTED : bool = true
+register FEAT_ETMv4p2_IMPLEMENTED : bool = false
 
-register FEAT_ETMv4p3_IMPLEMENTED : bool = true
+register FEAT_ETMv4p3_IMPLEMENTED : bool = false
 
-register FEAT_ETMv4p4_IMPLEMENTED : bool = true
+register FEAT_ETMv4p4_IMPLEMENTED : bool = false
 
-register FEAT_ETMv4p5_IMPLEMENTED : bool = true
+register FEAT_ETMv4p5_IMPLEMENTED : bool = false
 
-register FEAT_ETMv4p6_IMPLEMENTED : bool = true
+register FEAT_ETMv4p6_IMPLEMENTED : bool = false
 
 register FEAT_ETS2_IMPLEMENTED : bool = true
 
 register FEAT_FP_IMPLEMENTED : bool = true
 
-register FEAT_GICv3_IMPLEMENTED : bool = true
+register FEAT_GICv3_IMPLEMENTED : bool = false
 
-register FEAT_GICv3_LEGACY_IMPLEMENTED : bool = true
+register FEAT_GICv3_LEGACY_IMPLEMENTED : bool = false
 
-register FEAT_GICv3_TDIR_IMPLEMENTED : bool = true
+register FEAT_GICv3_TDIR_IMPLEMENTED : bool = false
 
-register FEAT_GICv3p1_IMPLEMENTED : bool = true
+register FEAT_GICv3p1_IMPLEMENTED : bool = false
 
-register FEAT_GICv4_IMPLEMENTED : bool = true
+register FEAT_GICv4_IMPLEMENTED : bool = false
 
-register FEAT_GICv4p1_IMPLEMENTED : bool = true
+register FEAT_GICv4p1_IMPLEMENTED : bool = false
 
-register FEAT_IVIPT_IMPLEMENTED : bool = true
+register FEAT_IVIPT_IMPLEMENTED : bool = false
 
-register FEAT_PCSRv8_IMPLEMENTED : bool = true
+register FEAT_PCSRv8_IMPLEMENTED : bool = false
 
 register FEAT_PMULL_IMPLEMENTED : bool = true
 
-register FEAT_PMUv3_IMPLEMENTED : bool = true
+register FEAT_PMUv3_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3_EXT_IMPLEMENTED : bool = true
+register FEAT_PMUv3_EXT_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3_EXT32_IMPLEMENTED : bool = true
+register FEAT_PMUv3_EXT32_IMPLEMENTED : bool = false
 
 register FEAT_SHA1_IMPLEMENTED : bool = true
 
@@ -440,7 +440,7 @@ register FEAT_nTLBPA_IMPLEMENTED : bool = true
 
 register FEAT_CRC32_IMPLEMENTED : bool = true
 
-register FEAT_Debugv8p1_IMPLEMENTED : bool = true
+register FEAT_Debugv8p1_IMPLEMENTED : bool = false
 
 register FEAT_HAFDBS_IMPLEMENTED : bool = true
 
@@ -450,29 +450,29 @@ register FEAT_LOR_IMPLEMENTED : bool = true
 
 register FEAT_LSE_IMPLEMENTED : bool = true
 
-register FEAT_PAN_IMPLEMENTED : bool = true
+register FEAT_PAN_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3p1_IMPLEMENTED : bool = true
+register FEAT_PMUv3p1_IMPLEMENTED : bool = false
 
 register FEAT_RDM_IMPLEMENTED : bool = true
 
-register FEAT_VHE_IMPLEMENTED : bool = true
+register FEAT_VHE_IMPLEMENTED : bool = false
 
-register FEAT_VMID16_IMPLEMENTED : bool = true
+register FEAT_VMID16_IMPLEMENTED : bool = false
 
-register FEAT_AA32BF16_IMPLEMENTED : bool = true
+register FEAT_AA32BF16_IMPLEMENTED : bool = false
 
-register FEAT_AA32HPD_IMPLEMENTED : bool = true
+register FEAT_AA32HPD_IMPLEMENTED : bool = false
 
-register FEAT_AA32I8MM_IMPLEMENTED : bool = true
+register FEAT_AA32I8MM_IMPLEMENTED : bool = false
 
 register FEAT_ASMv8p2_IMPLEMENTED : bool = true
 
-register FEAT_DPB_IMPLEMENTED : bool = true
+register FEAT_DPB_IMPLEMENTED : bool = false
 
-register FEAT_Debugv8p2_IMPLEMENTED : bool = true
+register FEAT_Debugv8p2_IMPLEMENTED : bool = false
 
-register FEAT_EDHSR_IMPLEMENTED : bool = true
+register FEAT_EDHSR_IMPLEMENTED : bool = false
 
 register FEAT_F32MM_IMPLEMENTED : bool = true
 
@@ -494,9 +494,9 @@ register FEAT_LVA_IMPLEMENTED : bool = true
 
 register FEAT_MPAM_IMPLEMENTED : bool = true
 
-register FEAT_PAN2_IMPLEMENTED : bool = true
+register FEAT_PAN2_IMPLEMENTED : bool = false
 
-register FEAT_PCSRv8p2_IMPLEMENTED : bool = true
+register FEAT_PCSRv8p2_IMPLEMENTED : bool = false
 
 register FEAT_RAS_IMPLEMENTED : bool = true
 
@@ -504,13 +504,13 @@ register FEAT_SHA3_IMPLEMENTED : bool = true
 
 register FEAT_SHA512_IMPLEMENTED : bool = true
 
-register FEAT_SM3_IMPLEMENTED : bool = true
+register FEAT_SM3_IMPLEMENTED : bool = false
 
-register FEAT_SM4_IMPLEMENTED : bool = true
+register FEAT_SM4_IMPLEMENTED : bool = false
 
 register FEAT_SPE_IMPLEMENTED : bool = true
 
-register FEAT_SVE_IMPLEMENTED : bool = true
+register FEAT_SVE_IMPLEMENTED : bool = false
 
 register FEAT_TTCNP_IMPLEMENTED : bool = true
 
@@ -538,15 +538,15 @@ register FEAT_LRCPC_IMPLEMENTED : bool = true
 
 register FEAT_NV_IMPLEMENTED : bool = true
 
-register FEAT_PACIMP_IMPLEMENTED : bool = false
+register FEAT_PACIMP_IMPLEMENTED : bool = true
 
 register FEAT_PACQARMA3_IMPLEMENTED : bool = false
 
-register FEAT_PACQARMA5_IMPLEMENTED : bool = true
+register FEAT_PACQARMA5_IMPLEMENTED : bool = false
 
 register FEAT_PAuth_IMPLEMENTED : bool = true
 
-register FEAT_SPEv1p1_IMPLEMENTED : bool = true
+register FEAT_SPEv1p1_IMPLEMENTED : bool = false
 
 register FEAT_AMUv1_IMPLEMENTED : bool = true
 
@@ -556,11 +556,11 @@ register FEAT_CNTSC_IMPLEMENTED : bool = true
 
 register FEAT_DIT_IMPLEMENTED : bool = true
 
-register FEAT_Debugv8p4_IMPLEMENTED : bool = true
+register FEAT_Debugv8p4_IMPLEMENTED : bool = false
 
 register FEAT_DotProd_IMPLEMENTED : bool = true
 
-register FEAT_DoubleFault_IMPLEMENTED : bool = true
+register FEAT_DoubleFault_IMPLEMENTED : bool = false
 
 register FEAT_FHM_IMPLEMENTED : bool = true
 
@@ -574,7 +574,7 @@ register FEAT_LSE2_IMPLEMENTED : bool = true
 
 register FEAT_NV2_IMPLEMENTED : bool = true
 
-register FEAT_PMUv3p4_IMPLEMENTED : bool = true
+register FEAT_PMUv3p4_IMPLEMENTED : bool = false
 
 register FEAT_RASSAv1p1_IMPLEMENTED : bool = true
 
@@ -584,11 +584,11 @@ register FEAT_S2FWB_IMPLEMENTED : bool = true
 
 register FEAT_SEL2_IMPLEMENTED : bool = true
 
-register FEAT_TLBIOS_IMPLEMENTED : bool = true
+register FEAT_TLBIOS_IMPLEMENTED : bool = false
 
-register FEAT_TLBIRANGE_IMPLEMENTED : bool = true
+register FEAT_TLBIRANGE_IMPLEMENTED : bool = false
 
-register FEAT_TRF_IMPLEMENTED : bool = true
+register FEAT_TRF_IMPLEMENTED : bool = false
 
 register FEAT_TTL_IMPLEMENTED : bool = true
 
@@ -614,19 +614,19 @@ register FEAT_FlagM2_IMPLEMENTED : bool = true
 
 register FEAT_GTG_IMPLEMENTED : bool = true
 
-register FEAT_MTE_IMPLEMENTED : bool = true
+register FEAT_MTE_IMPLEMENTED : bool = false
 
-register FEAT_MTE2_IMPLEMENTED : bool = true
+register FEAT_MTE2_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3p5_IMPLEMENTED : bool = true
+register FEAT_PMUv3p5_IMPLEMENTED : bool = false
 
 register FEAT_RNG_IMPLEMENTED : bool = true
 
-register FEAT_RNG_TRAP_IMPLEMENTED : bool = true
+register FEAT_RNG_TRAP_IMPLEMENTED : bool = false
 
 register FEAT_SB_IMPLEMENTED : bool = true
 
-register FEAT_SPECRES_IMPLEMENTED : bool = true
+register FEAT_SPECRES_IMPLEMENTED : bool = false
 
 register FEAT_SSBS_IMPLEMENTED : bool = true
 
@@ -668,11 +668,11 @@ register FEAT_LS64_ACCDATA_IMPLEMENTED : bool = true
 
 register FEAT_LS64_V_IMPLEMENTED : bool = true
 
-register FEAT_MTE3_IMPLEMENTED : bool = true
+register FEAT_MTE3_IMPLEMENTED : bool = false
 
-register FEAT_PAN3_IMPLEMENTED : bool = true
+register FEAT_PAN3_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3p7_IMPLEMENTED : bool = true
+register FEAT_PMUv3p7_IMPLEMENTED : bool = false
 
 register FEAT_RPRES_IMPLEMENTED : bool = true
 
@@ -684,23 +684,23 @@ register FEAT_XS_IMPLEMENTED : bool = true
 
 register FEAT_CMOW_IMPLEMENTED : bool = true
 
-register FEAT_Debugv8p8_IMPLEMENTED : bool = true
+register FEAT_Debugv8p8_IMPLEMENTED : bool = false
 
-register FEAT_GICv3_NMI_IMPLEMENTED : bool = true
+register FEAT_GICv3_NMI_IMPLEMENTED : bool = false
 
 register FEAT_HBC_IMPLEMENTED : bool = true
 
 register FEAT_MOPS_IMPLEMENTED : bool = true
 
-register FEAT_NMI_IMPLEMENTED : bool = true
+register FEAT_NMI_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3_EXT64_IMPLEMENTED : bool = true
+register FEAT_PMUv3_EXT64_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3_TH_IMPLEMENTED : bool = true
+register FEAT_PMUv3_TH_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3p8_IMPLEMENTED : bool = true
+register FEAT_PMUv3p8_IMPLEMENTED : bool = false
 
-register FEAT_SCTLR2_IMPLEMENTED : bool = true
+register FEAT_SCTLR2_IMPLEMENTED : bool = false
 
 register FEAT_SPEv1p3_IMPLEMENTED : bool = true
 
@@ -718,9 +718,9 @@ register FEAT_CLRBHB_IMPLEMENTED : bool = true
 
 register FEAT_CSSC_IMPLEMENTED : bool = true
 
-register FEAT_Debugv8p9_IMPLEMENTED : bool = true
+register FEAT_Debugv8p9_IMPLEMENTED : bool = false
 
-register FEAT_DoubleFault2_IMPLEMENTED : bool = true
+register FEAT_DoubleFault2_IMPLEMENTED : bool = false
 
 register FEAT_ECBHB_IMPLEMENTED : bool = true
 
@@ -730,33 +730,33 @@ register FEAT_HAFT_IMPLEMENTED : bool = true
 
 register FEAT_LRCPC3_IMPLEMENTED : bool = true
 
-register FEAT_MTE4_IMPLEMENTED : bool = true
+register FEAT_MTE4_IMPLEMENTED : bool = false
 
-register FEAT_MTE_ASYM_FAULT_IMPLEMENTED : bool = true
+register FEAT_MTE_ASYM_FAULT_IMPLEMENTED : bool = false
 
-register FEAT_MTE_ASYNC_IMPLEMENTED : bool = true
+register FEAT_MTE_ASYNC_IMPLEMENTED : bool = false
 
-register FEAT_MTE_CANONICAL_TAGS_IMPLEMENTED : bool = true
+register FEAT_MTE_CANONICAL_TAGS_IMPLEMENTED : bool = false
 
-register FEAT_MTE_NO_ADDRESS_TAGS_IMPLEMENTED : bool = true
+register FEAT_MTE_NO_ADDRESS_TAGS_IMPLEMENTED : bool = false
 
-register FEAT_MTE_PERM_IMPLEMENTED : bool = true
+register FEAT_MTE_PERM_IMPLEMENTED : bool = false
 
-register FEAT_MTE_STORE_ONLY_IMPLEMENTED : bool = true
+register FEAT_MTE_STORE_ONLY_IMPLEMENTED : bool = false
 
-register FEAT_MTE_TAGGED_FAR_IMPLEMENTED : bool = true
+register FEAT_MTE_TAGGED_FAR_IMPLEMENTED : bool = false
 
-register FEAT_PCSRv8p9_IMPLEMENTED : bool = true
+register FEAT_PCSRv8p9_IMPLEMENTED : bool = false
 
 register FEAT_PFAR_IMPLEMENTED : bool = true
 
-register FEAT_PMUv3_EDGE_IMPLEMENTED : bool = true
+register FEAT_PMUv3_EDGE_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3_ICNTR_IMPLEMENTED : bool = true
+register FEAT_PMUv3_ICNTR_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3_SS_IMPLEMENTED : bool = true
+register FEAT_PMUv3_SS_IMPLEMENTED : bool = false
 
-register FEAT_PMUv3p9_IMPLEMENTED : bool = true
+register FEAT_PMUv3p9_IMPLEMENTED : bool = false
 
 register FEAT_PRFMSLC_IMPLEMENTED : bool = true
 
@@ -782,7 +782,7 @@ register FEAT_SPE_FDS_IMPLEMENTED : bool = true
 
 register FEAT_SPEv1p4_IMPLEMENTED : bool = true
 
-register FEAT_SPMU_IMPLEMENTED : bool = true
+register FEAT_SPMU_IMPLEMENTED : bool = false
 
 register FEAT_THE_IMPLEMENTED : bool = true
 
@@ -790,43 +790,43 @@ register FEAT_DoPD_IMPLEMENTED : bool = true
 
 register FEAT_ETE_IMPLEMENTED : bool = true
 
-register FEAT_SVE2_IMPLEMENTED : bool = true
+register FEAT_SVE2_IMPLEMENTED : bool = false
 
-register FEAT_SVE_AES_IMPLEMENTED : bool = true
+register FEAT_SVE_AES_IMPLEMENTED : bool = false
 
-register FEAT_SVE_BitPerm_IMPLEMENTED : bool = true
+register FEAT_SVE_BitPerm_IMPLEMENTED : bool = false
 
-register FEAT_SVE_PMULL128_IMPLEMENTED : bool = true
+register FEAT_SVE_PMULL128_IMPLEMENTED : bool = false
 
-register FEAT_SVE_SHA3_IMPLEMENTED : bool = true
+register FEAT_SVE_SHA3_IMPLEMENTED : bool = false
 
-register FEAT_SVE_SM4_IMPLEMENTED : bool = true
+register FEAT_SVE_SM4_IMPLEMENTED : bool = false
 
 register FEAT_TME_IMPLEMENTED : bool = true
 
 register FEAT_TRBE_IMPLEMENTED : bool = true
 
-register FEAT_ETEv1p1_IMPLEMENTED : bool = true
+register FEAT_ETEv1p1_IMPLEMENTED : bool = false
 
 register FEAT_BRBE_IMPLEMENTED : bool = true
 
-register FEAT_ETEv1p2_IMPLEMENTED : bool = true
+register FEAT_ETEv1p2_IMPLEMENTED : bool = false
 
 register FEAT_RME_IMPLEMENTED : bool = true
 
-register FEAT_SME_IMPLEMENTED : bool = true
+register FEAT_SME_IMPLEMENTED : bool = false
 
-register FEAT_SME_F64F64_IMPLEMENTED : bool = true
+register FEAT_SME_F64F64_IMPLEMENTED : bool = false
 
-register FEAT_SME_FA64_IMPLEMENTED : bool = true
+register FEAT_SME_FA64_IMPLEMENTED : bool = false
 
-register FEAT_SME_I16I64_IMPLEMENTED : bool = true
+register FEAT_SME_I16I64_IMPLEMENTED : bool = false
 
 register FEAT_BRBEv1p1_IMPLEMENTED : bool = true
 
 register FEAT_MEC_IMPLEMENTED : bool = true
 
-register FEAT_SME2_IMPLEMENTED : bool = true
+register FEAT_SME2_IMPLEMENTED : bool = false
 
 register FEAT_ABLE_IMPLEMENTED : bool = true
 
@@ -836,7 +836,7 @@ register FEAT_D128_IMPLEMENTED : bool = true
 
 register FEAT_EBEP_IMPLEMENTED : bool = true
 
-register FEAT_ETEv1p3_IMPLEMENTED : bool = true
+register FEAT_ETEv1p3_IMPLEMENTED : bool = false
 
 register FEAT_GCS_IMPLEMENTED : bool = true
 
@@ -848,13 +848,13 @@ register FEAT_LVA3_IMPLEMENTED : bool = true
 
 register FEAT_SEBEP_IMPLEMENTED : bool = true
 
-register FEAT_SME2p1_IMPLEMENTED : bool = true
+register FEAT_SME2p1_IMPLEMENTED : bool = false
 
-register FEAT_SME_F16F16_IMPLEMENTED : bool = true
+register FEAT_SME_F16F16_IMPLEMENTED : bool = false
 
-register FEAT_SVE2p1_IMPLEMENTED : bool = true
+register FEAT_SVE2p1_IMPLEMENTED : bool = false
 
-register FEAT_SVE_B16B16_IMPLEMENTED : bool = true
+register FEAT_SVE_B16B16_IMPLEMENTED : bool = false
 
 register FEAT_SYSINSTR128_IMPLEMENTED : bool = true
 
@@ -878,21 +878,21 @@ register v8Ap5_IMPLEMENTED : bool = true
 
 register v8Ap6_IMPLEMENTED : bool = true
 
-register v8Ap7_IMPLEMENTED : bool = true
+register v8Ap7_IMPLEMENTED : bool = false
 
-register v8Ap8_IMPLEMENTED : bool = true
+register v8Ap8_IMPLEMENTED : bool = false
 
-register v8Ap9_IMPLEMENTED : bool = true
+register v8Ap9_IMPLEMENTED : bool = false
 
-register v9Ap0_IMPLEMENTED : bool = true
+register v9Ap0_IMPLEMENTED : bool = false
 
-register v9Ap1_IMPLEMENTED : bool = true
+register v9Ap1_IMPLEMENTED : bool = false
 
-register v9Ap2_IMPLEMENTED : bool = true
+register v9Ap2_IMPLEMENTED : bool = false
 
-register v9Ap3_IMPLEMENTED : bool = true
+register v9Ap3_IMPLEMENTED : bool = false
 
-register v9Ap4_IMPLEMENTED : bool = true
+register v9Ap4_IMPLEMENTED : bool = false
 
 register FeatureImpl : vector(259, bool)
 

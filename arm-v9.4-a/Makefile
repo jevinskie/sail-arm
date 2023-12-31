@@ -22,7 +22,7 @@ SAIL_MAIN=src/elfmain.sail
 ISLA_MAIN=src/isla_main.sail
 LEM_SPLICES=$(wildcard src/lem-patches/*.sail)
 SAIL_FLAGS=
-SAIL_C_FLAGS = -O -Oconstant_fold
+SAIL_C_FLAGS = -O -Oconstant_fold --static
 # Extra monomorphisation splits
 SAIL_LEM_FLAGS = $(file < sail-lem-flags)
 
