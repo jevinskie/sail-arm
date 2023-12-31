@@ -67,7 +67,7 @@ c/armv9.c: $(SAIL_SRCS) $(SAIL_MAIN)
 	mv c/armv9.c.temp c/armv9.c
 
 gen_c c c.stamp: c/armv9.c
-	$(CC) -O2 -DHAVE_SETCONFIG c/armv9.c $(SAIL_DIR)/lib/*.c -lgmp -lz -I $(SAIL_DIR)/lib/ -o c/armv9
+	$(CC) -O2 -DHAVE_SETCONFIG c/armv9.c $(SAIL_DIR)/lib/*.c -lgmp -lz -I $(SAIL_DIR)/lib/ -o c/armv9 $(CFLAGS)
 	touch c.stamp
 
 gen_ir ir/armv9.ir: $(SAIL_SRCS) $(SAIL_MAIN) $(ISLA_MAIN)
