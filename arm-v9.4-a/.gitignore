@@ -3,6 +3,8 @@
 /bootloader.bin
 /c.stamp
 /c/
+/coq.stamp
+/coq/
 /isabelle.stamp
 /isabelle/
 /lem.stamp

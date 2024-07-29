@@ -12,6 +12,48 @@ SAIL_DIR:=$(shell opam config var sail:share)
 SAIL:=sail
 endif
 
+# Check if CC is Clang or GCC
+CC_VERSION := $(shell $(CC) --version 2>/dev/null)
+
+IS_CLANG := $(findstring clang, $(CC_VERSION))
+IS_GCC := $(findstring GCC, $(CC_VERSION))
+
+ifeq ($(IS_CLANG),clang)
+    $(info Compiler is Clang)
+    CFLAGS += -fbracket-depth=4096
+else ifeq ($(IS_GCC),GCC)
+    $(info Compiler is GCC)
+else
+    $(info Compiler is not recognized or not set)
+endif
+
+# Check if Homebrew is installed
+HOMEBREW := $(shell command -v brew 2>/dev/null)
+
+# Set *FLAGS for GMP only if Homebrew is installed and not empty
+ifneq ($(HOMEBREW),)
+    GMP_PREFIX_DIR := $(shell brew --prefix gmp 2>/dev/null)
+    ifeq ($(wildcard $(GMP_PREFIX_DIR)),)
+        $(error Homebrew found but gmp not installed. Run 'brew install gmp')
+    endif
+    GMP_INCLUDE_DIR := $(GMP_PREFIX_DIR)/include
+    GMP_LIB_DIR := $(GMP_PREFIX_DIR)/lib
+
+    ifneq ($(wildcard $(GMP_INCLUDE_DIR)),)
+        GMP_CFLAGS += -I $(GMP_INCLUDE_DIR)
+    else
+        $(error Homebrew GMP is installed but include dir is missing at: $(GMP_INCLUDE_DIR))
+    endif
+    ifneq ($(wildcard $(GMP_LIB_DIR)),)
+        GMP_LDFLAGS += -L $(GMP_LIB_DIR)
+    else
+        $(error Homebrew GMP is installed but lib dir is missing at: $(GMP_LIB_DIR))
+    endif
+endif
+
+CFLAGS += -O2
+
+
 ISLA_SAIL=isla-sail
 ISLA_PREPROCESS=isla-preprocess
 ISLA_PREPROCESS_CONFIG=../../isla/configs/armv9p4.toml
@@ -69,9 +111,15 @@ c/armv9.c: $(SAIL_SRCS) $(SAIL_MAIN)
 		-c $(SAIL_C_FLAGS) $(SAIL_FLAGS) $(SAIL_SRCS) $(SAIL_MAIN) > c/armv9.c.temp
 	mv c/armv9.c.temp c/armv9.c
 
-gen_c c c.stamp: c/armv9.c
-	$(CC) -O2 -DHAVE_SETCONFIG c/armv9.c $(SAIL_DIR)/lib/*.c -lgmp -lz -I $(SAIL_DIR)/lib/ -o c/armv9
+gen_c c c.stamp: $(addsuffix .o,$(basename $(addprefix c/,$(notdir $(wildcard $(SAIL_DIR)/lib/*.c))))) c/armv9.o
+	$(CC) $(CFLAGS) $(GMP_LDFLAGS) -lgmp -lz $^ -o c/armv9
 	touch c.stamp
+
+c/armv9.o: c/armv9.c
+	$(CC) $(CFLAGS) $(GMP_CFLAGS) -I $(SAIL_DIR)/lib/ $^ -c -o $@
+
+c/%.o: $(SAIL_DIR)/lib/%.c
+	$(CC) $(CFLAGS) $(GMP_CFLAGS) -DHAVE_SETCONFIG $^ -c -o $@
 
 gen_ir ir/armv9.ir: $(SAIL_SRCS) $(SAIL_MAIN) $(ISLA_MAIN) $(ISLA_SPLICE)
 	mkdir -p ir
@@ -91,3 +139,4 @@ clean:
 	  isabelle/Prelude.thy isabelle/ArmAuxiliary.thy
 	rm -f coq.stamp coq/{arm_extras,armv9,armv9_types}.{v,vo,vok,vos,glob}
 	rm -f ir/armv9.ir
+	rm -rf c/
