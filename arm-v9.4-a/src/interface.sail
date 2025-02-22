@@ -42,6 +42,7 @@ $include <concurrency_interface.sail>
 $include <concurrency_interface/tlbi.sail>
 $include <concurrency_interface/exception.sail>
 $include <concurrency_interface/cache_op.sail>
+$include <concurrency_interface/translation.sail>
 
 // This the set of all Arm access types that are not covered by the generic
 // interface access type.
@@ -142,6 +143,16 @@ function write_request(accdesc, ti, size, va, pa, value) = struct {
   tag = None(),
 }
 
+instantiation sail_translation_start with
+  'trans_start = TranslationStartInfo
+
+function start_translation(tsi) = sail_translation_start(tsi)
+
+instantiation sail_translation_end with
+  'trans_end = AddressDescriptor
+
+function end_translation(desc) = sail_translation_end(desc)
+
 struct TLBIInfo = {
   rec: TLBIRecord,
   shareability : Shareability,
@@ -181,6 +192,8 @@ instantiation sail_return_exception
 
 instantiation sail_take_exception with
   'fault = option(FaultRecord)
+
+val return_exception : bits(56) -> unit
 
 function return_exception(x) = sail_return_exception(x)
 function take_exception(fault) = sail_take_exception(fault)
