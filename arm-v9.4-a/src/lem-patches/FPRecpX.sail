@@ -49,7 +49,7 @@ function FPRecpX (N, op, fpcr_in) = {
     value_name : real = undefined;
     assert('N == 16 | 'N == 32 | 'N == 64);
     fpcr : bits(64) = fpcr_in.bits;
-    esize : {|5, 8, 11|} = 5;
+    esize : {5, 8, 11} = 5;
     match 'N {
       16 => {
           esize = 5
